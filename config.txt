@@ -1,5 +1,5 @@
 [PARAMS]
-video_file = viddd.mp4
+video_file = 0
 output_video = output_segmented.mp4
 blur_val = 1
 contrast = 2.0
