@@ -271,6 +271,13 @@ while cap.isOpened():
     cv2.imshow('Line Follower Collage', collage)
 
     if cv2.waitKey(30) & 0xFF == ord('q'):
+        if serial_enabled and alacakart is not None and hasattr(alacakart, 'is_open') and alacakart.is_open:
+            try:
+                alacakart.write(b'AK\n')
+                print("[SERIAL] Exit command 'AK' sent.")
+                time.sleep(0.2)
+            except Exception as e:
+                print(f"Serial send error on quit: {e}")
         break
 
 cap.release()
